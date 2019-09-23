@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route
+} from 'react-router-dom'
 
+const Hello = ({world}) => {
+  return (
+    <div>Hello {world}</div>
+  )
+}
 class App extends Component {
   render() {
     return (
-      <div>
-        React Router Course
-      </div>
+      <Router>
+        <Route path={'/'} render={(props) => <Hello {...props} world={'world!!'}/>} />
+      </Router>
     )
   }
 }
